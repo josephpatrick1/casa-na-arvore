@@ -2,6 +2,7 @@ import { Request, Response } from "express"
 import knex from "../database/connection"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
+import "dotenv/config"
 
 export interface iUser {
     password: string,
@@ -29,7 +30,7 @@ class SessionController {
             
             const token = jwt.sign(
                 {User_id: User.id},
-                "secret",
+                String(process.env.APP_SECRET),
                 {expiresIn: "4h"}
             )
 
