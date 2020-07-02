@@ -24,4 +24,6 @@ routes.get("/test", (_, res) => res.send("Ok"))
 
 routes.post("/comment/:livroId", ConnectionLivroController.comment)
 
+routes.post("/favorite/:livroId", ConnectionLivroController.favorite)
+
 export default routes
