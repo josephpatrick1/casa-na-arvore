@@ -1,6 +1,9 @@
 import express from "express"
 const routes = express.Router()
 
+// Middlewares
+import Auth from "./middleware/auth"
+
 // Controllers
 import UserController from "./controllers/userController"
 import LivroController from "./controllers/livroController"
@@ -14,7 +17,8 @@ routes.post("/create-livro", LivroController.create);
 
 routes.post("/login", sessionController.login)
 
+routes.use(Auth) // Rotas autenticadas
 
-
+routes.get("/test", (_, res) => res.send("Ok")) 
 
 export default routes
