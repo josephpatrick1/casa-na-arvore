@@ -10,7 +10,7 @@ export async function up(knex: Knex) {
 
         table.string("comentario")
         table.integer("nota", 1).notNullable()
-        table.boolean("spoiler").notNullable()
+        table.boolean("spoiler").notNullable().defaultTo(false)
     })
 }
 
