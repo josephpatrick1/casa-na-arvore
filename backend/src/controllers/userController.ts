@@ -11,10 +11,6 @@ class UserController {
             const users = await knex("users")
                 .limit(Number(limit))
                 .offset((Number(page) - 1) * Number(limit))
-
-            if (users.length === 0)
-                return res.json("No users")
-
             return res.json(users)
         } catch (err) {
             return res.status(500).send()
@@ -52,9 +48,9 @@ class UserController {
             const hash = await bcrypt.hash(password, 10)
             data.password = hash
 
-            const user = await knex("users").insert(data)
+            const newUser = await knex("users").insert(data)
 
-            return res.send(user)
+            return res.json({newUser})
         } catch (err) {
             return res.status(500).send()
         }
