@@ -9,6 +9,7 @@ import UserController from "./controllers/userController"
 import LivroController from "./controllers/livroController"
 import sessionController from "./controllers/sessionController"
 import ConnectionLivroController from "./controllers/connectionLivroController"
+import CommentsController from "./controllers/commentsController"
 
 routes.get("/", UserController.index)
 routes.post("/create-user", UserController.create)
@@ -25,5 +26,7 @@ routes.get("/test", (_, res) => res.send("Ok"))
 routes.post("/comment/:livroId", ConnectionLivroController.comment)
 
 routes.post("/favorite/:livroId", ConnectionLivroController.favorite)
+
+routes.get("/comments/user", CommentsController.CommentsUser)
 
 export default routes
