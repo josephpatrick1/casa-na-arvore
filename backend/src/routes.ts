@@ -13,9 +13,11 @@ import CommentsController from "./controllers/commentsController"
 import AmigosController from "./controllers/amigosController"
 
 routes.get("/", UserController.index)
+
 routes.post("/create-user", UserController.create)
 
 routes.get("/livros", LivroController.index)
+
 routes.post("/create-livro", LivroController.create);
 
 routes.post("/login", sessionController.signin)
