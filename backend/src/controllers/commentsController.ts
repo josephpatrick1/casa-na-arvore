@@ -14,6 +14,20 @@ class commentsController {
             return res.status(500).send()
         }
     }
+
+    async CommentsLivro(req: Request, res: Response) {
+        const { livroId } = req.params
+        try {
+            const LivroComments = await knex("users_livros_avaliacoes")
+                .join("users_livros","users_livros.id","=","users_livros_avaliacoes.users_livros_id")
+                .join("livros","livros.id","=","users_livros.livros_id")
+                .select("users_livros_avaliacoes.*")
+                .where("livros.id", Number(livroId))
+            return res.json({LivroComments})
+        } catch (err) {
+            return res.status(500).send()
+        }
+    }
 }
 
 export default new commentsController
