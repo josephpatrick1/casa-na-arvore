@@ -18,7 +18,7 @@ routes.post("/create-user", UserController.create)
 routes.get("/livros", LivroController.index)
 routes.post("/create-livro", LivroController.create);
 
-routes.post("/login", sessionController.login)
+routes.post("/login", sessionController.signin)
 
 routes.use(Auth) // Rotas autenticadas
 

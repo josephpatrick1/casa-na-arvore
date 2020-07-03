@@ -5,12 +5,16 @@ export async function seed(knex: Knex) {
         {
             titulo: "O Pequeno Príncipe",
             descricao: "Descrição do Pequeno Príncipe",
-            arquivo_url: "https://lojasaraiva.vteximg.com.br/arquivos/ids/12054945/1002909425.jpg?v=637141927089070000"
+            arquivo_url: "https://lojasaraiva.vteximg.com.br/arquivos/ids/12054945/1002909425.jpg?v=637141927089070000",
+            autor: "Antoine de Saint-Exupéry",
+            editora: "editora 1"
         },
         {
             titulo: "Livro 2",
             descricao: "HAHAHAHA",
-            arquivo_url: "https://lojasaraiva.vteximg.com.br/arquivos/ids/12054945/1002909425.jpg?v=637141927089070000"
+            arquivo_url: "https://lojasaraiva.vteximg.com.br/arquivos/ids/12054945/1002909425.jpg?v=637141927089070000",
+            autor: "O autor do livro 2",
+            editora: "editora 2"
         }
     ])
 }

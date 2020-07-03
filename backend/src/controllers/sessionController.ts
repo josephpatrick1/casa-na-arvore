@@ -11,8 +11,27 @@ export interface iUser {
     id: number
 }
 
+export async function VerifyAndSign(User: iUser, password: string) {
+    try {
+        const isPasswordCorrect = await bcrypt.compare(password, User.password)
+
+        if (!isPasswordCorrect)
+            return false
+        
+        const token = jwt.sign(
+            {User_id: User.id},
+            String(process.env.APP_SECRET),
+            {expiresIn: "4h"}
+        )
+    
+        return token
+    } catch (err) {
+        return false
+    }
+}
+
 class SessionController {
-    async login(req: Request, res: Response) {
+    async signin(req: Request, res: Response) {
         const { email, password } = req.body
 
         try {
@@ -23,18 +42,12 @@ class SessionController {
             if (User === undefined)
                 return res.status(400).json("Cannot find a user with this email")
 
-            const isPasswordCorrect = await bcrypt.compare(password, User.password)
+            const Token = await VerifyAndSign(User, password)
 
-            if (!isPasswordCorrect)
+            if (!Token) 
                 return res.status(401).json("Wrong password")
-            
-            const token = jwt.sign(
-                {User_id: User.id},
-                String(process.env.APP_SECRET),
-                {expiresIn: "4h"}
-            )
 
-            return res.json({token})
+            return res.json(Token)
         } catch (err) {
             return res.status(500).send()
         }

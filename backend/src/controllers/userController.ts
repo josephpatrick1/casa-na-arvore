@@ -3,6 +3,8 @@ import bcrypt from "bcryptjs"
 
 import knex from "../database/connection"
 
+import { VerifyAndSign } from "./sessionController"
+
 class UserController {
     async index(req: Request, res: Response) {
         const { page = 1, limit = 5 } = req.query
@@ -48,9 +50,18 @@ class UserController {
             const hash = await bcrypt.hash(password, 10)
             data.password = hash
 
-            const newUser = await knex("users").insert(data)
+            const newUserId = await knex("users").insert(data)
 
-            return res.json({newUser})
+            const newUser = await knex("users")
+                .where({id: newUserId})
+                .first()
+
+            const Token = await VerifyAndSign(newUser, password)
+
+            if (!Token)
+                return  res.status(401).send()
+
+            return res.json({Token})
         } catch (err) {
             return res.status(500).send()
         }
