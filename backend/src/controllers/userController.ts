@@ -66,6 +66,10 @@ class UserController {
             return res.status(500).send()
         }
     }
+
+    async categoriasFavoritas(req: Request, res: Response) {
+        
+    }
 }
 
 export default new  UserController
