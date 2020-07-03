@@ -1,13 +1,8 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
-import { useParams } from 'react-router';
-import ExploreContainer from '../components/ExploreContainer';
-import './Page.css';
+import './Profile.css';
 
-const Page: React.FC = () => {
-
-  const { name } = useParams<{ name: string; }>();
-
+const Notifications: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -15,20 +10,20 @@ const Page: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>{name}</IonTitle>
+          <IonTitle>Notificações</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">{name}</IonTitle>
+            <IonTitle size="large">Notificações</IonTitle>
           </IonToolbar>
         </IonHeader>
-
+        <br />
+        <IonTitle>Notificações</IonTitle>
       </IonContent>
     </IonPage>
   );
 };
-
-export default Page;
+export default Notifications;

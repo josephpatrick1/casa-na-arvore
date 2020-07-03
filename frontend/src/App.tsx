@@ -24,6 +24,12 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/*Principais Abas */
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Games from './pages/Games';
+import Notifications from './pages/Notifications';
+
 const App: React.FC = () => {
 
   return (
@@ -32,8 +38,11 @@ const App: React.FC = () => {
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
-            <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+            <Route path="/abas/inicio" component={Home} exact />
+            <Route path="/abas/perfil" component={Profile} exact />
+            <Route path="/abas/games" component={Games} exact />
+            <Route path="/abas/notificacoes" component={Notifications} exact />
+            <Redirect from="/" to="/abas/inicio" exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
