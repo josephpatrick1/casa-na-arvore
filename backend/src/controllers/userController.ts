@@ -68,8 +68,24 @@ class UserController {
     }
 
     async categoriasFavoritas(req: Request, res: Response) {
-        
-    }
+        const { categorias } = req.body
+        try {
+
+            const UCF = categorias.map((categoriaId: number)  => {
+                return {
+                    "user_id": req.User_id,
+                    "categoria_id": categoriaId
+                }
+            })
+                
+            const NUCF = await knex("users_categorias_favoritas")
+                .insert(UCF,["user_id","categoria_id"])
+
+            return res.json("Success")
+        } catch (err) {
+            return res.status(500).send()
+        }
+    } 
 }
 
 export default new  UserController

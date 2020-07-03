@@ -12,14 +12,10 @@ import ConnectionLivroController from "./controllers/connectionLivroController"
 import CommentsController from "./controllers/commentsController"
 import AmigosController from "./controllers/amigosController"
 
-routes.get("/", UserController.index)
 
+// Fazer login ou criar conta
 routes.post("/create-user", UserController.create)
-
-routes.get("/livros", LivroController.index)
-
-routes.post("/create-livro", LivroController.create);
-
+// routes.post("/create-livro", LivroController.create);
 routes.post("/login", sessionController.signin)
 
 routes.use(Auth) // Rotas autenticadas
@@ -32,8 +28,14 @@ routes.post("/favorite/:livroId", ConnectionLivroController.favorite)
 
 routes.get("/comments/user", CommentsController.CommentsUser)
 
+routes.get("/livros", LivroController.index)
+
+routes.get("/", UserController.index)
+
 routes.get("/comments/livros/:livroId", CommentsController.CommentsLivro)
 
 routes.get("/amigos", AmigosController.index)
+
+routes.post("/user-categorias-favoritas", UserController.categoriasFavoritas)
 
 export default routes
