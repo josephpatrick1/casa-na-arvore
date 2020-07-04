@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useContext} from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
@@ -25,17 +25,37 @@ import './theme/variables.css';
 
 import MainTabs from './components/MainTabs'; 
 import Login from './pages/Login';
+import { AuthProvider } from './Context/AuthContext';
+
+
+import {Context} from "./Context/AuthContext"
 
 const App: React.FC = () => {
+
+  function CustomRoute({ isPrivate, ...rest }: any) {
+    const { loading, authenticated } = useContext(Context);
+  
+    if (loading) {
+      return <h1>Loading...</h1>;
+    }
+  
+    if (isPrivate && !authenticated) {
+      return <Redirect to="/login" />
+    }
+  
+    return <Route {...rest} />;
+  }
+
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
-          
           <IonRouterOutlet id="main">
-            <Route path="/abas" component={MainTabs} />
-            <Route path="/login" component={Login} />
-            <Redirect from="/" to="/login" exact />
+            <AuthProvider>
+              <CustomRoute path="/login" component={Login} />
+              <CustomRoute isPrivate path="/abas" component={MainTabs} />
+              {/* <Redirect from="/" to="/login" exact /> */}
+            </AuthProvider>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
