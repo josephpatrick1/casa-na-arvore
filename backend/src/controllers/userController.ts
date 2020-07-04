@@ -108,7 +108,7 @@ class UserController {
             // Livros das categorias que ele gosta em arrays diferentes
             const DataGroup = await group(Data, "Categoria")
 
-            return res.json(DataGroup)
+            return res.json({"Categorias": DataGroup})
         } catch (err) {
             return res.status(500).send()
         }
