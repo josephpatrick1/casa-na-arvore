@@ -27,9 +27,6 @@ import MainTabs from './components/MainTabs';
 import Login from './pages/Login';
 
 const App: React.FC = () => {
-
-  
-
   return (
     <IonApp>
       <IonReactRouter>
