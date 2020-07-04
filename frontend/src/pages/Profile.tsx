@@ -6,7 +6,7 @@ const Profile: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
@@ -16,7 +16,7 @@ const Profile: React.FC = () => {
 
       <IonContent>
         <IonHeader collapse="condense">
-          <IonToolbar>
+          <IonToolbar color="primary">
             <IonTitle size="large">Perfil</IonTitle>
           </IonToolbar>
         </IonHeader>

@@ -10,14 +10,14 @@ import {
 import React, { useState, useContext, FormEvent, ChangeEvent } from 'react';
 import './Login.css';
 
-import {Context} from "../Context/AuthContext"
+import { Context } from "../Context/AuthContext"
 
 const Login: React.FC = () => {
 
     const { handleLogin } = useContext(Context);
-        
+
     const [email, setEmail] = useState("")
-    // const [name, setName] = useState("")
+
     const [password, setPassword] = useState("")
 
     function handleEmail(event: ChangeEvent<HTMLInputElement>) {
@@ -30,18 +30,12 @@ const Login: React.FC = () => {
         setPassword(String(Password))
     }
 
-    // function handleName(event: ChangeEvent<HTMLInputElement>) {
-    //     const Name = event.target.value
-    //     setName(Name)
-    // }
-
     function handleSubmit(event: FormEvent) {
         event.preventDefault()
 
         const data = {
-        // name,
-        email,
-        password
+            email,
+            password
         }
 
         console.log(data)
@@ -52,24 +46,22 @@ const Login: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar>
-                    
+                <IonToolbar color="primary">
                     <IonTitle>Login</IonTitle>
                 </IonToolbar>
             </IonHeader>
-
             <IonContent className="ion-padding">
                 <IonHeader collapse="condense">
-                    <IonToolbar>
+                    <IonToolbar color="primary">
                         <IonTitle size="large">Entrar</IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 <form id="f">
                     <legend>Contact Info</legend>
                     <input type="email" placeholder="Email" value={email} onChange={handleEmail} required />
-                    <br/>
+                    <br />
                     <input type="password" onChange={handlePassword} value={password} placeholder="Password" required />
-                    <br/>
+                    <br />
                     <input type="submit" onClick={handleSubmit} value="Become a Ninja" />
                 </form>
             </IonContent>

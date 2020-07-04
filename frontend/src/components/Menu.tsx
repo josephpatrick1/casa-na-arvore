@@ -64,9 +64,7 @@ const appPages: AppPage[] = [
 
 const Menu: React.FC = () => {
   const location = useLocation();
-
   let menu;
-
   console.log(location.pathname);
   if (location.pathname.indexOf("/abas") >= 0) {
     menu = <IonMenu contentId="main" type="overlay">
@@ -96,7 +94,6 @@ const Menu: React.FC = () => {
     </IonContent>
   </IonMenu>;
   }
-
   return (menu);
 };
 
