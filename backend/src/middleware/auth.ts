@@ -25,7 +25,7 @@ export default async function Auth(req: Request, res: Response, next: NextFuncti
         return res.status(401).json("Invalid token")
 
     try {
-        const payload: any = jwt.verify(token, String(process.env.APP_SECRET))
+        const payload: any = await jwt.verify(token, String(process.env.APP_SECRET))
 
         if (payload === undefined)
             return res.status(401).json("Invalid token")

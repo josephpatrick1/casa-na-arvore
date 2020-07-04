@@ -6,8 +6,10 @@ class LivroController {
         const { limit = 5, page = 1, autor, editora, categoria, titulo } = req.query
         try {
             let Livros = knex("livros")
+                .select("livros.id as LivroID","categorias.categoria as Categoria", "livros.titulo as Titulo", "livros.arquivo_url as Capa")
                 .join("livros_categorias","livros_categorias.livro_id","=","livros.id")
                 .join("categorias","categorias.id","=","livros_categorias.categoria_id")
+                .groupBy("livros.id")
                 .limit(Number(limit))
                 .offset((Number(page) - 1) * Number(limit))
 
@@ -17,12 +19,10 @@ class LivroController {
 
             if (req.query.autor) {
                 Livros = Livros.where({autor: String(autor)})
-                    .select("*")
             }            
 
             if (req.query.editora) {
                 Livros = Livros.where({editora})
-                    .select("*")
             }
             
             if (req.query.categoria) {
@@ -33,12 +33,11 @@ class LivroController {
                     .select("id")
                 
                 Livros = Livros
-                    .select("*")
                     .where({categoria_id: CatId[0].id})
             }
 
             Livros.then(function(result) {
-                return res.json({result})
+                return res.json(result)
             })
         } catch (err) {
             return res.status(500).send()

@@ -22,7 +22,7 @@ class SessionController {
             if (!Token) 
                 return res.status(401).json("Wrong password")
 
-            return res.json(Token)
+            return res.json({Token})
         } catch (err) {
             return res.status(500).send()
         }
