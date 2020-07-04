@@ -1,11 +1,14 @@
 import {
-    IonButtons,
     IonContent,
     IonHeader,
-    IonMenuButton,
     IonPage,
     IonTitle,
     IonToolbar,
+    IonButton,
+    IonItem,
+    IonInput,
+    IonLabel,
+    IonList
 } from '@ionic/react';
 import React, { useState, useContext, FormEvent, ChangeEvent } from 'react';
 import './Login.css';
@@ -20,15 +23,15 @@ const Login: React.FC = () => {
     // const [name, setName] = useState("")
     const [password, setPassword] = useState("")
 
-    function handleEmail(event: ChangeEvent<HTMLInputElement>) {
-        const Email = event.target.value
-        setEmail(String(Email))
-    }
+    // function handleEmail(event: ChangeEvent<HTMLInputElement>) {
+    //     const Email = event.target.value
+    //     setEmail(String(Email))
+    // }
 
-    function handlePassword(event: ChangeEvent<HTMLInputElement>) {
-        const Password = event.target.value
-        setPassword(String(Password))
-    }
+    // function handlePassword(event: ChangeEvent<HTMLInputElement>) {
+    //     const Password = event.target.value
+    //     setPassword(String(Password))
+    // }
 
     // function handleName(event: ChangeEvent<HTMLInputElement>) {
     //     const Name = event.target.value
@@ -64,14 +67,20 @@ const Login: React.FC = () => {
                         <IonTitle size="large">Entrar</IonTitle>
                     </IonToolbar>
                 </IonHeader>
-                <form id="f">
-                    <legend>Contact Info</legend>
-                    <input type="email" placeholder="Email" value={email} onChange={handleEmail} required />
-                    <br/>
-                    <input type="password" onChange={handlePassword} value={password} placeholder="Password" required />
-                    <br/>
-                    <input type="submit" onClick={handleSubmit} value="Become a Ninja" />
-                </form>
+                <IonList>
+            <IonItem>
+                <IonLabel position="floating">Email</IonLabel>
+                <IonInput value={email} onIonChange={e => setEmail(e.detail.value!)}></IonInput>
+            </IonItem>
+
+            <IonItem>
+                <IonLabel position="floating">Password</IonLabel>
+                <IonInput value={password} type="password" onIonChange={e => setPassword(e.detail.value!)}></IonInput>
+            </IonItem>
+        </IonList>
+
+        <IonButton color="primary" onClick={handleSubmit} >Login</IonButton>
+
             </IonContent>
         </IonPage>
     );

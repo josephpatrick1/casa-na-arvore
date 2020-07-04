@@ -16,7 +16,6 @@ import Profile from '../pages/Profile';
 import Games from '../pages/Games';
 import Notifications from '../pages/Notifications';
 
-import Menu from '../components/Menu';
 const MainTabs: React.FC = () => {
 
 return (    
