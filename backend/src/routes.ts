@@ -38,4 +38,6 @@ routes.get("/amigos", AmigosController.index)
 
 routes.post("/user-categorias-favoritas", UserController.categoriasFavoritas)
 
+routes.get("/user-home", UserController.indexUserData)
+
 export default routes

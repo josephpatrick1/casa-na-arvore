@@ -8,7 +8,39 @@ export async function seed(knex: Knex) {
         },
         {
             livro_id: 2,
+            categoria_id: 1
+        },
+        {
+            livro_id: 3,
             categoria_id: 2
+        },
+        {
+            livro_id: 3,
+            categoria_id: 3
+        },
+        {
+            livro_id: 4,
+            categoria_id: 3
+        },
+        {
+            livro_id: 4,
+            categoria_id: 2
+        },
+        {
+            livro_id: 5,
+            categoria_id: 1
+        },
+        {
+            livro_id: 6,
+            categoria_id: 1
+        },
+        {
+            livro_id: 7,
+            categoria_id: 1
+        },
+        {
+            livro_id: 8,
+            categoria_id: 1
         }
     ])
 }

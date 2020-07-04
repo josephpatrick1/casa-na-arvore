@@ -5,6 +5,7 @@ import knex from "../database/connection"
 
 import { VerifyAndSign } from "./sessionController"
 
+
 class UserController {
     async index(req: Request, res: Response) {
         const { page = 1, limit = 5 } = req.query
@@ -81,11 +82,33 @@ class UserController {
             const NUCF = await knex("users_categorias_favoritas")
                 .insert(UCF,["user_id","categoria_id"])
 
+
             return res.json("Success")
         } catch (err) {
             return res.status(500).send()
         }
-    } 
+    }
+
+    async indexUserData(req: Request, res: Response) {
+        try {
+            const Data = await knex("livros_categorias")
+                .innerJoin("livros", "livros.id", "=", "livros_categorias.livro_id")
+                .innerJoin("categorias","categorias.id", "=", "livros_categorias.categoria_id")
+                .innerJoin("users_categorias_favoritas","users_categorias_favoritas.categoria_id", "=", "categorias.id")
+
+                .where("users_categorias_favoritas.user_id", req.User_id)
+
+                .groupBy(["categorias.id", "livros.id"])
+
+                .orderBy("categorias.categoria", "livros.titulo")
+
+            // Livros das categorias que ele gosta em arrays diferentes
+
+            return res.json(Data)
+        } catch (err) {
+            return res.status(500).send()
+        }
+    }
 }
 
 export default new  UserController
