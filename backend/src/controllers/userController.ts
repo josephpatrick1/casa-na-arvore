@@ -3,7 +3,8 @@ import bcrypt from "bcryptjs"
 
 import knex from "../database/connection"
 
-import { VerifyAndSign } from "./sessionController"
+import { VerifyAndSign } from "../functions/VerifyAndSign"
+import { group } from "../functions/group"
 
 
 class UserController {
@@ -102,9 +103,12 @@ class UserController {
 
                 .orderBy("categorias.categoria", "livros.titulo")
 
-            // Livros das categorias que ele gosta em arrays diferentes
+                .select("categorias.categoria as Categoria", "livros.titulo as Titulo", "livros.arquivo_url as Capa")
 
-            return res.json(Data)
+            // Livros das categorias que ele gosta em arrays diferentes
+            const DataGroup = await group(Data, "Categoria")
+
+            return res.json(DataGroup)
         } catch (err) {
             return res.status(500).send()
         }
