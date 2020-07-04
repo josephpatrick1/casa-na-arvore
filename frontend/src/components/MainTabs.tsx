@@ -21,9 +21,7 @@ const MainTabs: React.FC = () => {
 
 return (    
     <>
-    <Menu />
     <IonTabs>
-    
     <IonRouterOutlet>
         
         <Redirect exact path="/abas" to="/abas/inicio" />
@@ -46,6 +44,7 @@ return (
 
 
     </IonRouterOutlet>
+    
     <IonTabBar slot="bottom">
         <IonTabButton tab="home" href="/abas/inicio">
         <IonIcon icon={home} />

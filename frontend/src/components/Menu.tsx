@@ -13,14 +13,14 @@ import {
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { 
-  homeOutline, 
-  homeSharp, 
-  personOutline, 
-  personSharp, 
-  gameControllerOutline, 
-  gameControllerSharp, 
-  notificationsOutline, 
+import {
+  homeOutline,
+  homeSharp,
+  personOutline,
+  personSharp,
+  gameControllerOutline,
+  gameControllerSharp,
+  notificationsOutline,
   notificationsSharp
 } from 'ionicons/icons';
 
@@ -65,36 +65,39 @@ const appPages: AppPage[] = [
 const Menu: React.FC = () => {
   const location = useLocation();
 
-  return (
-    <IonMenu contentId="main" type="overlay">
-      <IonContent>
-        <IonList id="inbox-list">
-          <IonListHeader>Joseph Patrick</IonListHeader>
-          <IonNote>josephpatrickrat@gmail.com</IonNote>
-          {appPages.map((appPage, index) => {
-            return (
-              <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
-                </IonItem>
-              </IonMenuToggle>
-            );
-          })}
-        </IonList>
+  let menu;
 
-        {/*<IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={homeOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))
-        </IonList>*/}
-      </IonContent>
-    </IonMenu>
-  );
+  console.log(location.pathname);
+  if (location.pathname.indexOf("/abas") >= 0) {
+    menu = <IonMenu contentId="main" type="overlay">
+    <IonContent>
+      <IonList id="inbox-list">
+        <IonListHeader>Casa na Árvore</IonListHeader>
+        {appPages.map((appPage, index) => {
+          return (
+            <IonMenuToggle key={index} autoHide={false}>
+              <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
+                <IonLabel>{appPage.title}</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          );
+        })}
+      </IonList>
+    </IonContent>
+  </IonMenu>;
+  }
+  else {
+    menu = <IonMenu contentId="main" type="overlay">
+    <IonContent>
+      <IonList id="inbox-list">
+        <IonListHeader>Casa na Árvore</IonListHeader>
+      </IonList>
+    </IonContent>
+  </IonMenu>;
+  }
+
+  return (menu);
 };
 
 export default Menu;
