@@ -2,6 +2,7 @@
 import React  from 'react';
 import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon } from '@ionic/react';
 import { Route, Redirect } from 'react-router';
+import './MainTabs.css'
 
 import { 
     home, 
@@ -41,10 +42,9 @@ return (
         <Route path="/tabs/map" render={() => <MapView />} exact={true} />
     <Route path="/tabs/about" render={() => <About />} exact={true} />*/}
 
-
     </IonRouterOutlet>
     
-    <IonTabBar slot="bottom">
+    <IonTabBar slot="bottom" color="primary">
         <IonTabButton tab="home" href="/abas/inicio">
         <IonIcon icon={home} />
         </IonTabButton>

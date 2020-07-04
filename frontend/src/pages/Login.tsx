@@ -10,17 +10,17 @@ import {
     IonLabel,
     IonList
 } from '@ionic/react';
-import React, { useState, useContext, FormEvent, ChangeEvent } from 'react';
+import React, { useState, useContext, FormEvent } from 'react';
 import './Login.css';
 
-import {Context} from "../Context/AuthContext"
+import { Context } from "../Context/AuthContext"
 
 const Login: React.FC = () => {
 
     const { handleLogin } = useContext(Context);
-        
+
     const [email, setEmail] = useState("")
-    // const [name, setName] = useState("")
+
     const [password, setPassword] = useState("")
 
     // function handleEmail(event: ChangeEvent<HTMLInputElement>) {
@@ -33,18 +33,12 @@ const Login: React.FC = () => {
     //     setPassword(String(Password))
     // }
 
-    // function handleName(event: ChangeEvent<HTMLInputElement>) {
-    //     const Name = event.target.value
-    //     setName(Name)
-    // }
-
     function handleSubmit(event: FormEvent) {
         event.preventDefault()
 
         const data = {
-        // name,
-        email,
-        password
+            email,
+            password
         }
 
         console.log(data)
@@ -55,15 +49,13 @@ const Login: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar>
-                    
-                    <IonTitle>Login</IonTitle>
+                <IonToolbar color="primary">
+                    <IonTitle>Entrar</IonTitle>
                 </IonToolbar>
             </IonHeader>
-
             <IonContent className="ion-padding">
                 <IonHeader collapse="condense">
-                    <IonToolbar>
+                    <IonToolbar color="primary">
                         <IonTitle size="large">Entrar</IonTitle>
                     </IonToolbar>
                 </IonHeader>
@@ -80,7 +72,6 @@ const Login: React.FC = () => {
         </IonList>
 
         <IonButton color="primary" onClick={handleSubmit} >Login</IonButton>
-
             </IonContent>
         </IonPage>
     );

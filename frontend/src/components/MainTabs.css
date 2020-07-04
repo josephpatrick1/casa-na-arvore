@@ -1,0 +1,8 @@
+.tab-selected {
+    background: #3d8076 !important;
+    color: white !important;
+}
+
+.tab-has-icon {
+    color: #3d8076;
+}
