@@ -1,7 +1,7 @@
 <h1 align="center">
+<img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-03.svg"width="150"/>
    <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-02.svg"  width="150"/>
     <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-01.svg" width="150"/>
-    <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-03.svg"width="150"/>
     <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-04.svg"width="150"/>
     <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-05.svg"width="150"/>
   
@@ -16,8 +16,8 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/josephpatrick1/casa-na-arvore">
   </a>
 
-  <a href="https://github.com/josephpatrick1/casa-na-arvore/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/josephpatrick1/casa-na-arvore>
+ <a href="https://github.com/josephpatrick1/casa-na-arvore/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/josephpatrick1/casa-na-arvore">
   </a>
 
   <a href="https://github.com/josephpatrick1/casa-na-arvore/blob/master/LICENSE.md">
@@ -74,6 +74,7 @@ O [Insomnia](https://insomnia.rest/) nos auxiliou para testar as requisições d
 <h1 align="center">
   <a href="https://insomnia.rest/run/?label=Casa%20na%20Arvore&uri=https%3A%2F%2Fgithub.com%2Fjosephpatrick1%2Fcasa-na-arvore%2Fblob%2Fmaster%2FInsomnia_.json%2F" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </h1>
+
 ## 📱 🌐 FrontEnd
 
 Todo construído em [React](https://reactjs.org) e escrito em [TypeScript](https://github.com/Microsoft/TypeScript).
