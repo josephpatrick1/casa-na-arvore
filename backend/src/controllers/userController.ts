@@ -3,6 +3,10 @@ import bcrypt from "bcryptjs"
 
 import knex from "../database/connection"
 
+import { VerifyAndSign } from "../functions/VerifyAndSign"
+import { group } from "../functions/group"
+
+
 class UserController {
     async index(req: Request, res: Response) {
         const { page = 1, limit = 5 } = req.query
@@ -48,9 +52,63 @@ class UserController {
             const hash = await bcrypt.hash(password, 10)
             data.password = hash
 
-            const newUser = await knex("users").insert(data)
+            const newUserId = await knex("users").insert(data)
 
-            return res.json({newUser})
+            const newUser = await knex("users")
+                .where({id: newUserId})
+                .first()
+
+            const Token = await VerifyAndSign(newUser, password)
+
+            if (!Token)
+                return  res.status(401).send()
+
+            return res.json({Token})
+        } catch (err) {
+            return res.status(500).send()
+        }
+    }
+
+    async categoriasFavoritas(req: Request, res: Response) {
+        const { categorias } = req.body
+        try {
+
+            const UCF = categorias.map((categoriaId: number)  => {
+                return {
+                    "user_id": req.User_id,
+                    "categoria_id": categoriaId
+                }
+            })
+                
+            const NUCF = await knex("users_categorias_favoritas")
+                .insert(UCF,["user_id","categoria_id"])
+
+
+            return res.json("Success")
+        } catch (err) {
+            return res.status(500).send()
+        }
+    }
+
+    async indexUserData(req: Request, res: Response) {
+        try {
+            const Data = await knex("livros_categorias")
+                .innerJoin("livros", "livros.id", "=", "livros_categorias.livro_id")
+                .innerJoin("categorias","categorias.id", "=", "livros_categorias.categoria_id")
+                .innerJoin("users_categorias_favoritas","users_categorias_favoritas.categoria_id", "=", "categorias.id")
+
+                .where("users_categorias_favoritas.user_id", req.User_id)
+
+                .groupBy(["categorias.id", "livros.id"])
+
+                .orderBy("categorias.categoria", "livros.titulo")
+
+                .select("categorias.categoria as Categoria", "livros.titulo as Titulo", "livros.arquivo_url as Capa")
+
+            // Livros das categorias que ele gosta em arrays diferentes
+            const DataGroup = await group(Data, "Categoria")
+
+            return res.json(DataGroup)
         } catch (err) {
             return res.status(500).send()
         }

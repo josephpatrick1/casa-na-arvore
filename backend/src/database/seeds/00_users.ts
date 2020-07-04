@@ -5,7 +5,7 @@ export async function seed (knex: Knex) {
         name: "Biel",
         foto_url:"biel.jpg",
         email: "biel@gmail.com",
-        password: "123457",
+        password: "$2a$10$ef5VQs5CQSOirJUXcwLNJe4dTJgHuojV5mG09onrl3ehE.He3nmUW",
         pontos: 0,
         nozes: 20
     },
@@ -13,7 +13,7 @@ export async function seed (knex: Knex) {
         name: "Rafael",
         foto_url:"rafael.jpg",
         email: "rafael@gmail.com",
-        password: "123457",
+        password: "$2a$10$ef5VQs5CQSOirJUXcwLNJe4dTJgHuojV5mG09onrl3ehE.He3nmUW",
         pontos: 0,
         nozes: 20
     }])

@@ -1,5 +1,4 @@
-import Menu from './components/Menu';
-import Page from './pages/Page';
+
 import React from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -24,25 +23,19 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-/*Principais Abas */
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Games from './pages/Games';
-import Notifications from './pages/Notifications';
+import MainTabs from './components/MainTabs'; 
+import Login from './pages/Login';
 
 const App: React.FC = () => {
-
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
-          <Menu />
+          
           <IonRouterOutlet id="main">
-            <Route path="/abas/inicio" component={Home} exact />
-            <Route path="/abas/perfil" component={Profile} exact />
-            <Route path="/abas/games" component={Games} exact />
-            <Route path="/abas/notificacoes" component={Notifications} exact />
-            <Redirect from="/" to="/abas/inicio" exact />
+            <Route path="/abas" component={MainTabs} />
+            <Route path="/login" component={Login} />
+            <Redirect from="/" to="/login" exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

@@ -1,18 +1,12 @@
 import { Request, Response } from "express"
 import knex from "../database/connection"
-import jwt from "jsonwebtoken"
-import bcrypt from "bcryptjs"
 import "dotenv/config"
 
-export interface iUser {
-    password: string,
-    name: string,
-    email: string,
-    id: number
-}
+import { iUser, VerifyAndSign } from "../functions/VerifyAndSign"
+
 
 class SessionController {
-    async login(req: Request, res: Response) {
+    async signin(req: Request, res: Response) {
         const { email, password } = req.body
 
         try {
@@ -23,18 +17,12 @@ class SessionController {
             if (User === undefined)
                 return res.status(400).json("Cannot find a user with this email")
 
-            const isPasswordCorrect = await bcrypt.compare(password, User.password)
+            const Token = await VerifyAndSign(User, password)
 
-            if (!isPasswordCorrect)
+            if (!Token) 
                 return res.status(401).json("Wrong password")
-            
-            const token = jwt.sign(
-                {User_id: User.id},
-                String(process.env.APP_SECRET),
-                {expiresIn: "4h"}
-            )
 
-            return res.json({token})
+            return res.json(Token)
         } catch (err) {
             return res.status(500).send()
         }

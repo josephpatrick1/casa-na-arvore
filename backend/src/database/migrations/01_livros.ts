@@ -6,6 +6,8 @@ export async function up(knex: Knex) {
         livros.string("titulo").notNullable()
         livros.string("descricao").notNullable()
         livros.string("arquivo_url").notNullable()
+        livros.string("autor").notNullable()
+        livros.string("editora").notNullable()
     })
 
 }
