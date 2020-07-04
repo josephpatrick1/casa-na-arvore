@@ -30,6 +30,8 @@ import { AuthProvider } from './Context/AuthContext';
 
 import {Context} from "./Context/AuthContext"
 
+import Menu from './components/Menu';
+
 const App: React.FC = () => {
 
   function CustomRoute({ isPrivate, ...rest }: any) {
@@ -49,15 +51,15 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
-        <IonSplitPane contentId="main">
+          <Menu />
           <IonRouterOutlet id="main">
             <AuthProvider>
               <CustomRoute path="/login" component={Login} />
-              <CustomRoute isPrivate path="/abas" component={MainTabs} />
+              <CustomRoute isPrivate path="/abas" render={() => <MainTabs />}  />
               {/* <Redirect from="/" to="/login" exact /> */}
             </AuthProvider>
           </IonRouterOutlet>
-        </IonSplitPane>
+        
       </IonReactRouter>
     </IonApp>
   );
