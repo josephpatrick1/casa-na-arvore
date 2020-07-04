@@ -87,7 +87,7 @@ Na cosntrução da aplicação PWA, usamos o [Ionic](https://ionicframework.com/
 # Clone este repositório
 $ https://github.com/TadeuA/NLW-1https://github.com/josephpatrick1/casa-na-arvore.git
 
-# Navegue até a pasta server e execute os seguintes comandos:
+# Navegue até a pasta backend e execute os seguintes comandos:
 $ yarn install or npm install
 $ yarn knex:migrate or npm run knex:migrate
 $ yarn knex:seed or npm run knex:seed
