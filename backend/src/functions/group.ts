@@ -7,10 +7,11 @@
 
 */
 
-export const group = function(xs: any, key: any) {
-    return xs.reduce(function(rv: any, x: any) {
-        (rv[x[key]] = rv[x[key]] || []).push(x);
-        return rv;
-    }, {});
-};
+        
 
+export const group = function(Array: any, Categoria: any) {
+    return Array.reduce(function(acumulador: any, elemento: any) {
+        (acumulador[elemento[Categoria]] = acumulador[elemento[Categoria]] || []).push(elemento)
+        return acumulador;
+    }, {});
+}

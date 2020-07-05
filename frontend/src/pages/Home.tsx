@@ -3,17 +3,14 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 
 import api from "../services/api"
-
-// interface iData {
-
-// }
+import { key } from 'ionicons/icons';
 
 const Home: React.FC = () => {
   const [data, setData] = useState<any>([] as any)
 
   useEffect(() => {
     api.get("user-home").then( response => {
-      setData(response.data)
+      setData(response.data.categorias)
     })
   }, [])
 
@@ -21,21 +18,7 @@ const Home: React.FC = () => {
     return <IonLoading isOpen />
   }
 
-  let html = "";
-//   for(let categoria in data) {
-
-//     const livros = data[categoria];
-//     html += "<h1>"+categoria+"</h1>"
-//     console.log(categoria);
-//     livros.forEach((e: any, index:number) => {
-//       html += <p key={index}>{e.Titulo}</p>
-//     });
-
-// }
-
-  if (!html) {
-      return <IonLoading isOpen />
-  }
+  console.log(data)
 
   return (
     <IonPage>
@@ -54,7 +37,18 @@ const Home: React.FC = () => {
             <IonTitle size="large">Início</IonTitle>
           </IonToolbar>
         </IonHeader>
-  {}
+        {
+          data.map((categoria: any, index: any) => (
+            <>
+              <IonTitle key={index}>{categoria.categoria}</IonTitle>
+              {
+                categoria.livros.map( (livro: any, index: any) => (
+                  <IonText key={index}>{livro.Titulo}</IonText>
+                ))
+              }
+            </>
+          ))
+        }
       </IonContent>
     </IonPage>
   );

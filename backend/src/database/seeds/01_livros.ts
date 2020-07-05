@@ -4,10 +4,10 @@ export async function seed(knex: Knex) {
     return knex("livros").insert([
         {
             titulo: "O Pequeno Príncipe",
-            descricao: "Descrição do Pequeno Príncipe",
-            arquivo_url: "capa.jpg",
+            descricao: "O Pequeno Príncipe é uma obra literária do escritor francês Antoine de Saint-Exupéry, que conta a história da amizade entre um homem frustrado por ninguém compreender os seus desenhos, com um principezinho que habita um asteroide no espaço.",
+            arquivo_url: "opequenoprincipe.jpg",
             autor: "Antoine de Saint-Exupéry",
-            editora: "editora 1"
+            editora: "Gallimard"
         },
         {
             titulo: "Livro 2",

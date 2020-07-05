@@ -5,6 +5,7 @@ import knex from "../database/connection"
 
 import { VerifyAndSign } from "../functions/VerifyAndSign"
 import { group } from "../functions/group"
+import routes from "../routes"
 
 
 class UserController {
@@ -107,11 +108,49 @@ class UserController {
 
             // Livros das categorias que ele gosta em arrays diferentes
             const DataGroup = await group(Data, "Categoria")
-            
-            return res.json({
-                "categorias": DataGroup
-            })
 
+                
+            const ResData = []
+
+            for (let categoria in DataGroup) {
+
+                ResData.push({"categoria":categoria, "livros":(DataGroup[categoria])})
+
+            }
+
+            return res.json({"categorias":ResData})
+        } catch (err) {
+            return res.status(500).send()
+        }
+    }
+
+    async showUser(req: Request, res: Response) {
+        try {
+            const User = await knex("users")
+                .where({id: req.User_id})
+                
+                
+            if (!User)
+                return res.send(401).send()
+
+            const UserAmigos = knex("user_amigos")
+                .innerJoin("users", function() {
+                    this.on('users_amigos.user_id1', '=', 'users.id')
+                    .orOn('users_amigos.user_id2', '=', 'users.id')
+
+                })
+                .andWhere(function() {
+                    this.where('users_amigos.user_id1', "=", "2")
+                    .orWhere('users_amigos.user_id2', "=", "2")
+                })
+                .andWhere(function() {
+                    this.where('users.id', "!=", "2")
+                })
+                
+                //.where("users_amigos.id","")
+                .select("*")
+
+            
         } catch (err) {
             return res.status(500).send()
         }

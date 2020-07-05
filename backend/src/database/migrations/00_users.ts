@@ -9,6 +9,7 @@ export async function up(knex: Knex) {
         table.string("password").notNullable()
         table.integer("pontos").notNullable()
         table.integer("nozes").notNullable()
+        table.string("descricao").notNullable()
     })
 }
 

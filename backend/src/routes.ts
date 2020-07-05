@@ -30,7 +30,9 @@ routes.get("/comments/user", CommentsController.CommentsUser)
 
 routes.get("/livros", LivroController.index)
 
-routes.get("/", UserController.index)
+routes.get("/users", UserController.index)
+
+routes.get("/user", UserController.showUser)
 
 routes.get("/comments/livros/:livroId", CommentsController.CommentsLivro)
 
