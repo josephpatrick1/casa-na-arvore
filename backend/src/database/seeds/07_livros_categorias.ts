@@ -7,12 +7,28 @@ export async function seed(knex: Knex) {
             categoria_id: 5
         },
         {
+            livro_id: 1, // Pequeno principe
+            categoria_id: 1
+        },
+        {
             livro_id: 2, // De mal a pior
-            categoria_id: 6
+            categoria_id: 4
+        },
+        {
+            livro_id: 2, // De mal a pior
+            categoria_id: 1
         },
         {
             livro_id: 3, // Palavras Em Azul Profundo
             categoria_id: 5
+        },
+        {
+            livro_id: 3, // Palavras Em Azul Profundo
+            categoria_id: 4
+        },
+        {
+            livro_id: 3, // Palavras Em Azul Profundo
+            categoria_id: 1
         },
         {
             livro_id: 4, // O Herói Perdido 
@@ -20,7 +36,13 @@ export async function seed(knex: Knex) {
         },
         {
             livro_id: 5, // O Oráculo Oculto
-            categoria_id: 7
+            categoria_id: 3
+        },
+        {
+            
+            livro_id: 5, // O Oráculo Oculto
+            categoria_id: 1
+            
         },
         {
             livro_id: 5, // O Oráculo Oculto
@@ -32,11 +54,19 @@ export async function seed(knex: Knex) {
         },
         {
             livro_id: 6,
-            categoria_id: 4
+            categoria_id: 5
         },
         {
             livro_id: 6,
-            categoria_id: 7
-        }
+            categoria_id: 1
+        },
+        {
+            livro_id: 6,
+            categoria_id: 5
+        },
+        {
+            livro_id: 6, // À Beira da Eternidade
+            categoria_id: 4
+        },
     ])
 }

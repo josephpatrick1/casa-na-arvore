@@ -118,8 +118,8 @@ class UserController {
 
             }
 
-            return res.json({"categorias":ResData})
-        } catch (err) {
+            return res.json({"categorias": ResData})
+        } catch (err) { 
             return res.status(500).send()
         }
     }

@@ -24,7 +24,7 @@ export async function seed(knex: Knex) {
         },
         {
             user_id: 1,
-            categoria_id: 6
+            categoria_id: 3
         },
         {
             user_id: 4,
@@ -41,6 +41,14 @@ export async function seed(knex: Knex) {
         {
             user_id: 5,
             categoria_id: 1
+        },
+        {   
+            user_id: 1,
+            categoria_id: 2
+        },
+        {   
+            user_id: 1,
+            categoria_id: 4
         }
     ])
 }

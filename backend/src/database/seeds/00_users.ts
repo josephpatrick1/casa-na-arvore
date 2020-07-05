@@ -9,7 +9,8 @@ export async function seed (knex: Knex) {
             password: "$2a$10$ef5VQs5CQSOirJUXcwLNJe4dTJgHuojV5mG09onrl3ehE.He3nmUW", // 123456
             pontos: 3500,
             nozes: 20,
-            descricao: "Apaixonado por nozes"
+            descricao: "Apaixonado por nozes",
+            whatsapp: "48996249352"
         },
         {
             name: "Rafael",

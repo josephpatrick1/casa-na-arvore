@@ -6,4 +6,4 @@ export async function seed(knex: Knex) {
             users_livros_id: 1
         }
     ])
-}
+} 
