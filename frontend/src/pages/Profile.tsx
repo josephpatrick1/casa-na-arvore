@@ -4,12 +4,44 @@ import { RouteComponentProps } from 'react-router';
 import './Friend.css';
 
 import { ActionSheetButton } from '@ionic/core';
-import { IonSegment, IonSegmentButton, IonCard, IonCardContent, IonItem, IonAvatar, IonRow, IonCol, IonProgressBar, IonActionSheet, IonChip, IonIcon, IonHeader, IonLabel, IonToolbar, IonButtons, IonContent, IonButton, IonBackButton, IonPage } from '@ionic/react'
+import { IonSegment, IonSegmentButton, IonCard, IonCardContent, IonItem, IonAvatar, IonRow, IonCol, IonProgressBar, IonActionSheet, IonChip, IonIcon, IonHeader, IonLabel, IonToolbar, IonButtons, IonContent, IonButton, IonBackButton, IonPage, IonLoading } from '@ionic/react'
 import { logoWhatsapp, logoInstagram, personAdd, personAddOutline, book  } from 'ionicons/icons';
+
+import api from "../services/api"
+
+interface iData {
+  User: {
+    name: string,
+    xp: number,
+    foto_url: string,
+    descricao: string,
+    nozes: number,
+    Nivel: number,
+    elos: string
+  },
+  Amigos: {
+    id: number,
+    name: string,
+    foto_url: string
+  }[],
+  Comments: {
+    comentario: string,
+    nota: number,
+    arquivo_url: string,
+    titulo: string
+  }[]
+}
 
 const Friend: React.FC = () => {
 
-  // const [data, setData] = useState()
+  const [data, setData] = useState<iData>()
+
+  useEffect(() => {
+    api.get("user").then( response => {
+      setData(response.data)
+    })
+  }, [])
+
 
   const [showActionSheet, setShowActionSheet] = useState(false);
   const [actionSheetButtons, setActionSheetButtons] = useState<ActionSheetButton[]>([]);
@@ -64,6 +96,24 @@ const Friend: React.FC = () => {
     window.open(url, '_blank');
   }
 
+  console.log(data)
+
+  if (!data) {
+    return <IonLoading isOpen />
+  }
+
+  if (!data.User) {
+    return <IonLoading isOpen />
+  }
+
+  if (!data.Amigos) {
+    return <IonLoading isOpen />
+  }
+
+  if (!data.Comments) {
+    return <IonLoading isOpen />
+  }
+
   return (
     <IonPage id="speaker-detail">
       <IonContent>
@@ -87,7 +137,7 @@ const Friend: React.FC = () => {
 
         <div className="speaker-background">
           <img src={"https://cdn.discordapp.com/attachments/725067926574727279/729378236613787668/tadeu.jpg"} alt={"nome do usuario"}/>
-          <h2>{"🌰 Tadeu Agostini 🌰"}</h2>
+          <h2>{data.User.name}</h2>
         </div>
         
         <IonSegment value="1" onIonChange={e => console.log('Segment selected', e.detail.value)}>
@@ -107,18 +157,18 @@ const Friend: React.FC = () => {
           <br />
           <IonRow>
             <IonCol size="3">
-              <img src={"https://cdn.discordapp.com/attachments/725070233752174705/729385147702575204/casa-na-arvore-13.svg.png"} alt={"nome do usuario"}/>
+              <img src={""} alt={"nome do usuario"}/>
             </IonCol>
             <IonCol size="9">
 
             <img width="15" height="15" src="/assets/star.svg" alt="Estrela"/>
-              &nbsp;Level 4 <br />
+              &nbsp;{`Level ${data.User.Nivel}`} <br />
               
               <img width="15" height="15" src="/assets/nutnut.svg" alt="Nozes"/>
-              &nbsp;20 Nozes <br />
-              <IonProgressBar color="secondary" value={0.5}></IonProgressBar><br />
-              <div className="ion-float-left">4000 XP</div>
-              <div className="ion-float-right">5000 XP</div>
+              &nbsp;{`${data.User.nozes} Nozes`} <br />
+              <IonProgressBar color="secondary" value={(data.User.xp-(data.User.Nivel*1000))/1000}></IonProgressBar><br />
+              <div className="ion-float-left">{data.User.xp} XP</div>
+              <div className="ion-float-right">{(data.User.xp + 1000)} XP</div>
             </IonCol>
           </IonRow>
 
@@ -203,6 +253,6 @@ const Friend: React.FC = () => {
       />
     </IonPage>
   );
-};
+}
 
 export default Friend
