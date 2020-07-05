@@ -10,11 +10,12 @@ import {
   IonRow
 } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
-import { Route, Redirect } from 'react-router';
+// import { Route, Redirect } from 'react-router';
 
 import './Home.css';
 
 import api from "../services/api"
+
 
 const Home:React.FC = () => {
   const [data, setData] = useState<any>([] as any)

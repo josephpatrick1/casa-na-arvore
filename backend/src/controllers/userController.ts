@@ -134,7 +134,7 @@ class UserController {
             if (!User)
                 return res.send(401).send()
                 
-            const UserNivel = await whatNivel((User as any).xp)
+            const [Nivel, elo] = await whatNivel((User as any).xp)
 
             const UserAmigos = await knex("users_amigos")
                 .innerJoin("users", function() {
@@ -159,7 +159,7 @@ class UserController {
                 .where("users.id", req.User_id)
             
             const Response = {
-                "User": {...User, UserNivel},
+                "User": {...User, Nivel, elos: elo},
                 "Amigos": UserAmigos,
                 "Comments": UserComments
             }
