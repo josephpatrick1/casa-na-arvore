@@ -5,7 +5,7 @@ import './Friend.css';
 
 import { ActionSheetButton } from '@ionic/core';
 import { IonSegment, IonSegmentButton, IonCard, IonCardContent, IonItem, IonAvatar, IonRow, IonCol, IonProgressBar, IonActionSheet, IonChip, IonIcon, IonHeader, IonLabel, IonToolbar, IonButtons, IonContent, IonButton, IonBackButton, IonPage, IonLoading } from '@ionic/react'
-import { logoWhatsapp, logoInstagram, personAdd, personAddOutline, book  } from 'ionicons/icons';
+import { logoWhatsapp, logoInstagram, personAdd, personAddOutline, book, logoLinkedin  } from 'ionicons/icons';
 
 import api from "../services/api"
 
@@ -157,7 +157,7 @@ const Friend: React.FC = () => {
           <br />
           <IonRow>
             <IonCol size="3">
-              <img src={""} alt={"nome do usuario"}/>
+              <img src={`http://localhost:3333/uploads/elos/${data.User.elos}`} alt={"nome do usuario"}/>
             </IonCol>
             <IonCol size="9">
 
@@ -173,47 +173,31 @@ const Friend: React.FC = () => {
           </IonRow>
 
           <hr/>
-          <p>{"🌰🌰🌰 Apaixonado por Nozes 🌰🌰🌰!"}</p>
+          <p>{data.User.descricao}</p>
           <hr/>
 
-<IonChip color="secondary" onClick={() => openExternalUrl('https://instagram.com/ionicframework')}>
-  <IonIcon icon={logoInstagram}></IonIcon>
-  <IonLabel>Instagram</IonLabel>
-</IonChip>
-<IonChip color="primary" onClick={() => openExternalUrl('https://instagram.com/ionicframework')}>
-  <IonIcon icon={logoWhatsapp}></IonIcon>
-  <IonLabel>Whatsapp</IonLabel>
-</IonChip>
+        <IonChip color="secondary" onClick={() => openExternalUrl('https://www.linkedin.com/in/tadeu-agostini-498826147/')}>
+          <IonIcon icon={logoLinkedin}></IonIcon>
+          <IonLabel>Linkedin</IonLabel>
+        </IonChip>
+        <IonChip color="primary" onClick={() => openExternalUrl('whatsapp://send?phone=48996249352&text=Óla Tadeu')}>
+          <IonIcon icon={logoWhatsapp}></IonIcon>
+          <IonLabel>Whatsapp</IonLabel>
+        </IonChip>
           <hr/>
 
           <h3>Amigos</h3>
-          <IonItem>
-            <IonAvatar slot="start">
-              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-            </IonAvatar>
-            <IonLabel>Joseph<br /><IonButton color="primary">Ver Perfil</IonButton></IonLabel>
-          </IonItem>
 
-          <IonItem>
-            <IonAvatar slot="start">
-              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-            </IonAvatar>
-            <IonLabel>Illyana<br /><IonButton color="primary">Ver Perfil</IonButton></IonLabel>
-          </IonItem>
-
-          <IonItem>
-            <IonAvatar slot="start">
-              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-            </IonAvatar>
-            <IonLabel>Rafael<br /><IonButton color="primary">Ver Perfil</IonButton></IonLabel>
-          </IonItem>
-
-          <IonItem>
-            <IonAvatar slot="start">
-              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-            </IonAvatar>
-            <IonLabel>Jaqueline<br /><IonButton color="primary">Ver Perfil</IonButton></IonLabel>
-          </IonItem>
+        {  
+          data.Amigos.map((amigo, index) => (
+            <IonItem key={index}>
+              <IonAvatar slot="start">
+                <img src={`http://localhost:3333/uploads/users/${amigo.foto_url}`} alt={amigo.foto_url} />
+              </IonAvatar>
+              <IonLabel>{amigo.name}<br /><IonButton color="primary">Ver Perfil</IonButton></IonLabel>
+            </IonItem>
+          ))
+        }
           
           <h3>Clubes de Leitura</h3>
 
