@@ -10,6 +10,10 @@ export async function up(knex: Knex) {
         table.integer("pontos").notNullable()
         table.integer("nozes").notNullable()
         table.string("descricao").notNullable()
+
+        // Opcional
+        table.string("instagram")
+        table.string("whatsapp")
     })
 }
 
