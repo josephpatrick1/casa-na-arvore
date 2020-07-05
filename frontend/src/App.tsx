@@ -3,6 +3,8 @@ import React, {useContext} from 'react';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
+import './theme/style_global.css';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -31,6 +33,7 @@ import { AuthProvider } from './Context/AuthContext';
 import {Context} from "./Context/AuthContext"
 
 import Menu from './components/Menu';
+import Tutorial from './pages/Tutorial';
 
 const App: React.FC = () => {
 
@@ -51,15 +54,17 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
+        
+      <Redirect from="/" to="/tutorial" exact /> 
           <Menu />
           <IonRouterOutlet id="main">
+            <Route path="/tutorial" render={() => <Tutorial />} exact />
             <AuthProvider>
               <CustomRoute path="/login" component={Login} />
               <CustomRoute isPrivate path="/abas" render={() => <MainTabs />}  />
-              {/* <Redirect from="/" to="/abas" exact /> */}
+
             </AuthProvider>
           </IonRouterOutlet>
-        
       </IonReactRouter>
     </IonApp>
   );

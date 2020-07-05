@@ -3,7 +3,13 @@
     color: white;
 }
 
+#tutorial-page h2 {
+	color: white;
+}
 
+#tutorial ion-button {
+	color: white !important;
+}
 
 
 #tutorial-page ion-toolbar {

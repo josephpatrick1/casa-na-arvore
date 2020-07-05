@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'BaksoSapi';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./BaksoSapi.otf');
+}
+
+IonTitle {
+    font-family: BaksoSapi;
+}
