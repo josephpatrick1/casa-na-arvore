@@ -1,0 +1,68 @@
+
+
+#speaker-detail {
+    /*
+       * Speaker Background
+       */
+    /*
+       * Speaker Details
+       */
+  }
+
+  
+  #speaker-detail ion-toolbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      --background: transparent;
+      --color: white;
+  }
+  
+  #speaker-detail ion-toolbar ion-back-button,
+    #speaker-detail ion-toolbar ion-button,
+    #speaker-detail ion-toolbar ion-menu-button {
+      --color: white;
+  }
+  
+  #speaker-detail .speaker-background {
+      position: relative;
+      display: flex;
+      padding-top: var(--ion-safe-area-top);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: calc(250px + var(--ion-safe-area-top));
+      background: center/cover url("https://i.pinimg.com/originals/55/4e/22/554e221d521acab29dd5544d5901b742.jpg") no-repeat;
+  }
+  
+  #speaker-detail .speaker-background img {
+      width: 150px;
+      border-radius: 50%;
+      margin-top: calc(-1 * var(--ion-safe-area-top));
+  }
+  
+  #speaker-detail .speaker-background h2 {
+      position: absolute;
+      bottom: 10px;
+      color: white;
+  }
+  
+  #speaker-detail .md .speaker-background {
+      box-shadow: rgba(0, 0, 0, 0.2) 0 3px 1px -2px, rgba(0, 0, 0, 0.14) 0 2px 2px 0px, rgba(0, 0, 0, 0.12) 0 1px 5px 0;
+  }
+  
+  #speaker-detail .ios .speaker-background {
+      box-shadow: rgba(0, 0, 0, 0.12) 0 4px 16px;
+  }
+  
+  #speaker-detail .speaker-detail p {
+      margin-left: 6px;
+      margin-right: 6px;
+  }
+  
+  #speaker-detail .speaker-detail hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background: var(--ion-color-step-150, #d7d8da);
+  }

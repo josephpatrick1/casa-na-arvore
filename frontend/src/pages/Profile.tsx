@@ -13,7 +13,6 @@ const Profile: React.FC = () => {
           <IonTitle>Perfil</IonTitle>
         </IonToolbar>
       </IonHeader>
-
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar color="primary">

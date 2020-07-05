@@ -16,6 +16,8 @@ import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import Games from '../pages/Games';
 import Notifications from '../pages/Notifications';
+import Tutorial from '../pages/Tutorial';
+import Friend from '../pages/Friend';
 
 const MainTabs: React.FC = () => {
 
@@ -26,9 +28,9 @@ return (
         <Redirect exact path="/abas" to="/abas/inicio" />
 
         <Route path="/abas/inicio" render={() => <Home />} exact />
-        <Route path="/abas/perfil" render={() => <Profile />} exact />
+        <Route path="/abas/perfil" render={() => <Friend UserID="1"/>} exact />
         <Route path="/abas/games" render={() => <Games />} exact />
-        <Route path="/abas/notificacoes" render={() => <Notifications />} exact />
+        <Route path="/abas/notificacoes" render={() => <Tutorial />} exact />
         {/*
         Using the render method prop cuts down the number of renders your components will have due to route changes.
         Use the component prop when your component depends on the RouterComponentProps passed in automatically.
