@@ -1,14 +1,18 @@
 import { Joi, Segments } from "celebrate";
 
-import { stringRules, numberRules, livroParams } from "./rulesValidation";
+import { stringRules, numberRules } from "./rulesValidation";
 
 class connectionLivroValidation {
   favorite = {
-    livroParams,
+    [Segments.PARAMS]: Joi.object().keys({
+      livroId: numberRules,
+    }),
   };
 
   comment = {
-    livroParams,
+    [Segments.PARAMS]: Joi.object().keys({
+      livroId: numberRules,
+    }),
     [Segments.BODY]: Joi.object().keys({
       nota: numberRules,
       comentario: stringRules,
@@ -17,4 +21,4 @@ class connectionLivroValidation {
   };
 }
 
-export default connectionLivroValidation;
+export default new connectionLivroValidation();

@@ -4,7 +4,7 @@ import livroValidation from "./livroValidation";
 import signinValidation from "./signinValidation";
 import userValidation from "./userValidation";
 
-export {
+export default {
   commentsValidation,
   connectionLivroValidation,
   livroValidation,

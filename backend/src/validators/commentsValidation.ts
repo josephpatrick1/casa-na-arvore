@@ -1,9 +1,13 @@
 import { Joi, Segments } from "celebrate";
 
-import { stringRules, numberRules, livroParams } from "./rulesValidation";
+import { numberRules } from "./rulesValidation";
 
 class CommentsValidation {
-  CommentsLivro = livroParams;
+  CommentsLivro = {
+    [Segments.PARAMS]: Joi.object().keys({
+      livroId: numberRules,
+    }),
+  };
 }
 
-export default CommentsValidation;
+export default new CommentsValidation();

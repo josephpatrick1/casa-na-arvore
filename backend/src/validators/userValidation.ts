@@ -30,4 +30,4 @@ class userValidation {
   };
 }
 
-export default userValidation;
+export default new userValidation();

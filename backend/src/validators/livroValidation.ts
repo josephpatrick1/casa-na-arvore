@@ -15,4 +15,4 @@ class livroValidation {
   };
 }
 
-export default livroValidation;
+export default new livroValidation();

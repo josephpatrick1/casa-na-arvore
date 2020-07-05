@@ -7,15 +7,4 @@ const stringRules = Joi.string();
 
 const numberRules = Joi.number();
 
-const livroParams = {
-  [Segments.PARAMS]: Joi.object().keys({
-    livroId: numberRules,
-  }),
-};
-export {
-  emailRules,
-  stringRulesRequired,
-  stringRules,
-  numberRules,
-  livroParams,
-};
+export { emailRules, stringRulesRequired, stringRules, numberRules };
