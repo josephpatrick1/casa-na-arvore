@@ -56,7 +56,7 @@ const Home:React.FC = () => {
               <IonRow class="infinity">
               {
                 categoria.livros.map((livro: any, index: any) => (
-                  <img key={index} alt={livro.Titulo} src="http://imagens.lelivros.love/2020/06/baixar-livro-a-melodia-feroz-monstros-da-violencia-vol-01-victoria-schwab-em-pdf-epub-mobi-ou-ler-online-174x270.jpg" height="200" />
+                  <img key={index} alt={livro.Titulo} src={`http://localhost:3333/uploads/${livro.Capa}`} height="200" />
                 )) 
               }
               </IonRow>
