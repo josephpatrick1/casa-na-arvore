@@ -10,10 +10,10 @@ export async function seed(knex: Knex) {
             editora: "Gallimard"
         },
         {
-            titulo: "Livro 2",
+            titulo: "De Mal a Pior",
             descricao: "HAHAHAHA",
             arquivo_url: "capa.jpg",
-            autor: "O autor do livro 2",
+            autor: "Simon James Green",
             editora: "editora 2"
         },
         {
