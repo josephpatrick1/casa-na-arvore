@@ -5,7 +5,7 @@ import knex from "../database/connection"
 
 import { VerifyAndSign } from "../functions/VerifyAndSign"
 import { group } from "../functions/group"
-import routes from "../routes"
+import { whatNivel } from "../functions/whatNivel"
 
 
 class UserController {
@@ -128,29 +128,44 @@ class UserController {
         try {
             const User = await knex("users")
                 .where({id: req.User_id})
-                
+                .first()
+                .select("users.name", "users.pontos as xp", "users.foto_url", "users.descricao", "users.nozes")
                 
             if (!User)
                 return res.send(401).send()
+                
+            const UserNivel = await whatNivel((User as any).xp)
 
-            const UserAmigos = knex("user_amigos")
+            const UserAmigos = await knex("users_amigos")
                 .innerJoin("users", function() {
                     this.on('users_amigos.user_id1', '=', 'users.id')
                     .orOn('users_amigos.user_id2', '=', 'users.id')
 
                 })
                 .andWhere(function() {
-                    this.where('users_amigos.user_id1', "=", "2")
-                    .orWhere('users_amigos.user_id2', "=", "2")
+                    this.where('users_amigos.user_id1', "=", req.User_id)
+                    .orWhere('users_amigos.user_id2', "=", req.User_id)
                 })
                 .andWhere(function() {
-                    this.where('users.id', "!=", "2")
+                    this.where('users.id', "!=", req.User_id)
                 })
                 
-                //.where("users_amigos.id","")
                 .select("*")
 
+            const UserComments = await knex("users_livros_avaliacoes")
+                .join("users_livros","users_livros.id","=","users_livros_avaliacoes.users_livros_id")
+                .join("users","users.id","=","users_livros.user_id")
+                .select("users_livros_avaliacoes.*")
+                .where("users.id", req.User_id)
             
+            
+            const Response = {
+                "User": {...User, UserNivel},
+                "Amigos": UserAmigos,
+                "Comments": UserComments
+            }
+
+            return res.json(Response)
         } catch (err) {
             return res.status(500).send()
         }

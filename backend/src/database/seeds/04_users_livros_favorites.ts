@@ -4,9 +4,6 @@ export async function seed(knex: Knex) {
     return knex("users_livros_favorites").insert([
         {
             users_livros_id: 1
-        },
-        {
-            users_livros_id: 2
         }
     ])
 }

@@ -40,7 +40,7 @@ export async function seed(knex: Knex) {
         {
             titulo: "À Beira da Eternidade",
             descricao: "Mistério, romance, drama e viagem no tempo no primeiro livro de Melissa E. Hurst. 2146. Bridger é uma das poucas pessoas com a habilidade de viajar de volta ao passado. Uma habilidade que lhe foi passada pelo pai, cuja morte – envolta em mistério – o garoto tenta superar. Aos poucos, sua vida parece voltar ao normal... Até que o garoto encontra o pai em uma de suas viagens no tempo com a turma. Ele só tem tempo de lhe passar uma mensagem: Salve Alora. Bridger não tem ideia de quem seja a garota, nem de onde ela está ou em que tempo vive, mas está determinado a realizar o último pedido do pai. 2013. Alora Walker tem apagões inexplicáveis. Ela acorda toda vez em um lugar diferente, e não tem ideia de como chegou lá. A única coisa de que tem certeza é que está sendo seguida. Mas por quem?",
-            arquivo_url: "imagem.jpg",
+            arquivo_url: "abeiradaeternidade.jpg",
             autor: "Melissa E. Hurst",
             editora: "Galera"
         }

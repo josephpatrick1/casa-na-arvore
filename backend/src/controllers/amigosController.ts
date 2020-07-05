@@ -11,11 +11,11 @@ class AmigosController {
 
                 })
                 .andWhere(function() {
-                    this.where('users_amigos.user_id1', "=", "2")
-                    .orWhere('users_amigos.user_id2', "=", "2")
+                    this.where('users_amigos.user_id1', "=", req.User_id)
+                    .orWhere('users_amigos.user_id2', "=", req.User_id)
                 })
                 .andWhere(function() {
-                    this.where('users.id', "!=", "2")
+                    this.where('users.id', "!=", req.User_id)
                 })
                 
 
