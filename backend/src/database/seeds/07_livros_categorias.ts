@@ -20,7 +20,7 @@ export async function seed(knex: Knex) {
         },
         {
             livro_id: 5, // O Oráculo Oculto
-            categoria_id: 6
+            categoria_id: 7
         },
         {
             livro_id: 5, // O Oráculo Oculto

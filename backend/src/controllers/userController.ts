@@ -149,15 +149,14 @@ class UserController {
                 .andWhere(function() {
                     this.where('users.id', "!=", req.User_id)
                 })
-                
-                .select("*")
+                .select("users.id", "users.name", "users.foto_url")
 
             const UserComments = await knex("users_livros_avaliacoes")
                 .join("users_livros","users_livros.id","=","users_livros_avaliacoes.users_livros_id")
                 .join("users","users.id","=","users_livros.user_id")
-                .select("users_livros_avaliacoes.*")
+                .join("livros", "livros.id", "=", "users_livros.id")
+                .select("users_livros_avaliacoes.comentario", "users_livros_avaliacoes.nota", "livros.arquivo_url", "livros.titulo")
                 .where("users.id", req.User_id)
-            
             
             const Response = {
                 "User": {...User, UserNivel},

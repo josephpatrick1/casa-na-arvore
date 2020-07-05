@@ -4,7 +4,7 @@ export async function seed(knex: Knex) {
     return knex("users_categorias_favoritas").insert([
         {
             user_id: 1,
-            categoria_id: 6
+            categoria_id: 7
         },
         {
             user_id: 2,

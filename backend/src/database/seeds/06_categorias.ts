@@ -21,10 +21,10 @@ export async function seed(knex: Knex) {
             categoria: "Ficção gay" //6
         },
         {
-            categoria: "Mitologia grega" //6
+            categoria: "Mitologia grega" //7
         },
         {
-            categoria: "Romance" // 7
+            categoria: "Romance" // 8
         }
     ])
 }
