@@ -22,16 +22,16 @@ const Home: React.FC = () => {
   }
 
   let html = "";
-  for(let categoria in data) {
+//   for(let categoria in data) {
 
-    const livros = data[categoria];
-    html += "<h1>"+categoria+"</h1>"
-    console.log(categoria);
-    livros.forEach((e: any, index:number) => {
-      html += <p key={index}>{e.Titulo}</p>
-    });
+//     const livros = data[categoria];
+//     html += "<h1>"+categoria+"</h1>"
+//     console.log(categoria);
+//     livros.forEach((e: any, index:number) => {
+//       html += <p key={index}>{e.Titulo}</p>
+//     });
 
-}
+// }
 
   if (!html) {
       return <IonLoading isOpen />
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
             <IonTitle size="large">Início</IonTitle>
           </IonToolbar>
         </IonHeader>
-        {html}
+  {}
       </IonContent>
     </IonPage>
   );
