@@ -8,7 +8,7 @@ export async function seed(knex: Knex) {
         },
         {
             livro_id: 2, // De mal a pior
-            categoria_id: 6
+            categoria_id: 3
         },
         {
             livro_id: 3, // Palavras Em Azul Profundo
@@ -23,6 +23,12 @@ export async function seed(knex: Knex) {
             categoria_id: 7
         },
         {
+            
+            livro_id: 5, // O Oráculo Oculto
+            categoria_id: 1
+            
+        },
+        {
             livro_id: 5, // O Oráculo Oculto
             categoria_id: 5
         },
@@ -32,11 +38,11 @@ export async function seed(knex: Knex) {
         },
         {
             livro_id: 6,
-            categoria_id: 4
+            categoria_id: 5
         },
         {
             livro_id: 6,
-            categoria_id: 7
+            categoria_id: 1
         }
     ])
 }
