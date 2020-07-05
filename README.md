@@ -1,8 +1,8 @@
 <h1 align="center">
 <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-03.svg"width="150"/>
    <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-02.svg"  width="150"/>
-    <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-01.svg" width="150"/>
     <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-04.svg"width="150"/>
+     <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-01.svg" width="150"/>
     <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-05.svg"width="150"/>
   
 </h1>
@@ -51,21 +51,24 @@ O <strong>Casa na Árvore</strong> é uma solução criada para o desafio <stron
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
-
-- [TypeScript](https://github.com/Microsoft/TypeScript)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://reactjs.org)
-- [Ionic](https://ionicframework.com/)
-- [Celebrate](https://github.com/arb/celebrate)
-- [Knex](http://knexjs.org/)
-- [Axios](https://github.com/axios/axios)
-- [Express](https://expressjs.com/pt-br/guide/routing.html)
+| | |
+| --- | --- |
+| <img alt="nutnut" title="#delicinha" src=".github/nutnut.svg" width="24"/> | [TypeScript](https://github.com/Microsoft/TypeScript) |
+| <img alt="nutnut" title="#delicinha" src=".github/nutnut.svg" width="24"/> | [Node.js](https://nodejs.org/en/) |
+| <img alt="nutnut" title="#delicinha" src=".github/nutnut.svg" width="24"/> | [React](https://reactjs.org) |
+| <img alt="nutnut" title="#delicinha" src=".github/nutnut.svg" width="24"/> | [Ionic](https://ionicframework.com/) |
+|<img alt="nutnut" title="#delicinha" src=".github/nutnut.svg" width="24"/>| [Celebrate](https://github.com/arb/celebrate) |
+| <img alt="nutnut" title="#delicinha" src=".github/nutnut.svg" width="24"/> | [Knex](http://knexjs.org/) |
+| <img alt="nutnut" title="#delicinha" src=".github/nutnut.svg" width="24"/> | [Axios](https://github.com/axios/axios) |
+| <img alt="nutnut" title="#delicinha" src=".github/nutnut.svg" width="24"/> | [Express](https://expressjs.com/pt-br/guide/routing.html) |
 
 ## 🔨 Backend
 
-O back-end foi construido com [Node.js](https://nodejs.org/en/), todo escrito com [TypeScrip](https://github.com/Microsoft/TypeScript), que quando compilado gera code JavaScript puro.
+O back-end foi construido com [Node.js](https://nodejs.org/en/), todo escrito com [TypeScript](https://github.com/Microsoft/TypeScript), que quando compilado gera code JavaScript puro.
 
 O [Express](https://expressjs.com/pt-br/guide/routing.html) foi usado para lidar com as rotas de forma simples e eficaz, e foi aplicado o [Cors](https://github.com/expressjs/cors) assim possibilitando uma conexão mais segura e o [Celebrate](https://github.com/arb/celebrate) para validar as requisições.
+
+Na autenticação geramos os hash das senhas com [Bcryptjs](https://www.npmjs.com/package/bcryptjs) e [JsonWebToken](https://jwt.io/) para gerar os tokens de validação.
 
 O [Knex](http://knexjs.org/) foi o ORM escolhido para o nosso gerenciamento com banco de dados que em ambiente de desenvolvimento esta sendo usado o SQLite3.
 
