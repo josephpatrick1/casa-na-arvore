@@ -8,10 +8,6 @@ export async function seed(knex: Knex) {
         },
         {
             user_id1: 1,
-            user_id2: 2
-        },
-        {
-            user_id1: 1,
             user_id2: 3
         },
         {
