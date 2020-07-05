@@ -3,16 +3,28 @@ import Knex from "knex"
 export async function seed(knex: Knex) {
     return knex("categorias").insert([
         {
-            categoria: "1 Ficcao cientifica"
+            categoria: "Ficcao cientifica" // 1
         },
         {
-            categoria: "2 Acao"
+            categoria: "Acao" // 2
         },
         {
-            categoria: "3 Aventura"
+            categoria: "Aventura" // 3
         },
         {
-            categoria: "4 Drama"
+            categoria: "Suspense" //4
+        },
+        {
+            categoria: "infanto-juvenil" // 5
+        },
+        {
+            categoria: "Ficção gay" //6
+        },
+        {
+            categoria: "Mitologia grega" //6
+        },
+        {
+            categoria: "Romance" // 7
         }
     ])
 }

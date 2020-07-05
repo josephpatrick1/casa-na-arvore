@@ -7,12 +7,6 @@ export async function seed(knex: Knex) {
             comentario: "Um belo livro, gostei muito!",
             nota: 5,
             spoiler: false
-        },
-        {
-            users_livros_id: 1,
-            comentario: "Spoiler aqui hehe!",
-            nota: 5,
-            spoiler: true
         }
     ])
 }
