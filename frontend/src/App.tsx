@@ -56,7 +56,7 @@ const App: React.FC = () => {
             <AuthProvider>
               <CustomRoute path="/login" component={Login} />
               <CustomRoute isPrivate path="/abas" render={() => <MainTabs />}  />
-              {/* <Redirect from="/" to="/login" exact /> */}
+              {/* <Redirect from="/" to="/abas" exact /> */}
             </AuthProvider>
           </IonRouterOutlet>
         
