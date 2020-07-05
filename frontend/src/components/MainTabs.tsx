@@ -20,7 +20,6 @@ import Notifications from '../pages/Notifications';
 const MainTabs: React.FC = () => {
 
 return (    
-    <>
     <IonTabs>
     <IonRouterOutlet>
         
@@ -40,7 +39,7 @@ return (
         <Route path="/tabs/schedule/:id" component={SessionDetail} />
         <Route path="/tabs/speakers/sessions/:id" component={SessionDetail} />
         <Route path="/tabs/map" render={() => <MapView />} exact={true} />
-    <Route path="/tabs/about" render={() => <About />} exact={true} />*/}
+        <Route path="/tabs/about" render={() => <About />} exact={true} />*/}
 
     </IonRouterOutlet>
     
@@ -59,7 +58,6 @@ return (
         </IonTabButton>
     </IonTabBar>
     </IonTabs>
-</>
 );
 };
 

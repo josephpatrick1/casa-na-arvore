@@ -1,0 +1,16 @@
+.infinity {
+    white-space: nowrap;
+  overflow-x: auto !important;
+  display: inline-block;
+}
+.infinity img {
+    padding: 10px;
+}
+
+.infinity img:first-child {
+    padding-left: 20px;
+}
+
+.infinity img:last-child {
+    padding-right: 20px;
+}
