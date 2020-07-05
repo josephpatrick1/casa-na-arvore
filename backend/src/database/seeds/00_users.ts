@@ -14,7 +14,7 @@ export async function seed (knex: Knex) {
         },
         {
             name: "Rafael",
-            foto_url:"rafael.jpg",
+            foto_url:"rafael.png",
             email: "rafael@gmail.com",
             password: "$2a$10$ef5VQs5CQSOirJUXcwLNJe4dTJgHuojV5mG09onrl3ehE.He3nmUW",
             pontos: 40400,
@@ -32,7 +32,7 @@ export async function seed (knex: Knex) {
         },
         {
             name: "Illyana",
-            foto_url:"Illyana.jpg",
+            foto_url:"illyana.png",
             email: "Illyana@gmail.com",
             password: "$2a$10$ef5VQs5CQSOirJUXcwLNJe4dTJgHuojV5mG09onrl3ehE.He3nmUW", // 123456
             pontos: 14600,
@@ -41,7 +41,7 @@ export async function seed (knex: Knex) {
         },
         {
             name: "Jaquetinha",
-            foto_url:"Jaquetinha.jpg",
+            foto_url:"jaqueline.png",
             email: "Jaquetinha@gmail.com",
             password: "$2a$10$ef5VQs5CQSOirJUXcwLNJe4dTJgHuojV5mG09onrl3ehE.He3nmUW", // 123456
             pontos: 34600,
