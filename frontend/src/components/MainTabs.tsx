@@ -28,7 +28,7 @@ return (
         <Redirect exact path="/abas" to="/abas/inicio" />
 
         <Route path="/abas/inicio" render={() => <Home />} exact />
-        <Route path="/abas/perfil" render={() => <Friend UserID="1"/>} exact />
+        <Route path="/abas/perfil" render={() => <Profile />} exact />
         <Route path="/abas/games" render={() => <Games />} exact />
         <Route path="/abas/notificacoes" render={() => <Tutorial />} exact />
         {/*
