@@ -4,7 +4,7 @@ import { RouteComponentProps } from 'react-router';
 import './Friend.css';
 
 import { ActionSheetButton } from '@ionic/core';
-import { IonSegment, IonSegmentButton, IonCard, IonCardContent, IonItem, IonAvatar, IonRow, IonCol, IonProgressBar, IonActionSheet, IonChip, IonIcon, IonHeader, IonLabel, IonToolbar, IonButtons, IonContent, IonButton, IonBackButton, IonPage, IonLoading } from '@ionic/react'
+import { IonMenuButton, IonSegment, IonSegmentButton, IonCard, IonCardContent, IonItem, IonAvatar, IonRow, IonCol, IonProgressBar, IonActionSheet, IonChip, IonIcon, IonHeader, IonLabel, IonToolbar, IonButtons, IonContent, IonButton, IonBackButton, IonPage, IonLoading } from '@ionic/react'
 import { logoWhatsapp, logoInstagram, personAdd, personAddOutline, book, logoLinkedin  } from 'ionicons/icons';
 
 import api from "../services/api"
@@ -37,7 +37,7 @@ const Friend: React.FC = () => {
   const [data, setData] = useState<iData>()
 
   useEffect(() => {
-    api.get("user").then( response => {
+    api.get("user").then( (response: any) => {
       setData(response.data)
     })
   }, [])
@@ -119,9 +119,11 @@ const Friend: React.FC = () => {
       <IonContent>
         <IonHeader className="ion-no-border">
           <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton defaultHref="/tabs/speakers" />
-            </IonButtons>
+            
+
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
             <IonButtons slot="end">
               {/*<IonButton onClick={() => openContact("telefone")}>
                 <IonIcon slot="icon-only" ios={personAddOutline} md={personAdd}></IonIcon>
@@ -139,18 +141,6 @@ const Friend: React.FC = () => {
           <img src={"https://cdn.discordapp.com/attachments/725067926574727279/729378236613787668/tadeu.jpg"} alt={"nome do usuario"}/>
           <h2>{data.User.name}</h2>
         </div>
-        
-        <IonSegment value="1" onIonChange={e => console.log('Segment selected', e.detail.value)}>
-          <IonSegmentButton value="1">
-            <IonLabel>Perfil</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="2">
-            <IonLabel>Amigos</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="3">
-            <IonLabel>Clubs</IonLabel>
-          </IonSegmentButton>
-        </IonSegment>
 
         <div className="ion-padding speaker-detail">
 

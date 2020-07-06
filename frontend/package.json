@@ -16,11 +16,13 @@
     "@types/react-router-dom": "^5.1.3",
     "axios": "^0.19.2",
     "ionicons": "^5.0.0",
+    "pdf-viewer-reactjs": "^2.0.7",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "sweetalert2": "^9.15.2",
     "typescript": "3.8.3"
   },
   "scripts": {
@@ -44,5 +46,8 @@
       "last 1 safari version"
     ]
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "devDependencies": {
+    "@types/pdf-viewer-reactjs": "^2.0.0"
+  }
 }

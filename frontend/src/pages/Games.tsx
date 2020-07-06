@@ -23,19 +23,19 @@ const Games: React.FC = () => {
         <IonRow>
           <IonCol>
             <IonCard>
-              <img src="/assets/games/quiz.png" />
+              <img alt="Game" src="/assets/games/quiz.png" />
               <IonCardHeader><IonCardTitle>Quiz</IonCardTitle><br />
                 Responda perguntas para ganhar nozes<br /><br />
-                <IonButton expand="block" color="primary">Jogar	&nbsp;<IonIcon icon={gameController} /></IonButton>
+                <IonButton routerLink="/abas/games/quiz" expand="block" color="primary">Jogar	&nbsp;<IonIcon icon={gameController} /></IonButton>
               </IonCardHeader>
             </IonCard>
           </IonCol>
           <IonCol>
             <IonCard>
-              <img src="/assets/games/soletrando.jpg" />
+              <img alt="Game" src="/assets/games/soletrando.jpg" />
               <IonCardHeader><IonCardTitle>Soletrando</IonCardTitle><br />
                 Responda como soletrar a palavra corretamente<br /><br />
-                <IonButton expand="block" color="primary">Jogar	&nbsp;<IonIcon icon={gameController} /></IonButton>
+                <IonButton routerLink="/abas/games/quiz" expand="block" color="primary">Jogar	&nbsp;<IonIcon icon={gameController} /></IonButton>
               </IonCardHeader>
             </IonCard>
           </IonCol>
@@ -44,19 +44,19 @@ const Games: React.FC = () => {
         <IonRow>
         <IonCol>
             <IonCard>
-              <img src="/assets/games/quallivro.jpg" />
+              <img alt="Game" src="/assets/games/quallivro.jpg" />
               <IonCardHeader><IonCardTitle>Qual é o Livro</IonCardTitle><br />
                 Descobra qual é o livro<br /><br />
-                <IonButton expand="block" color="primary">Jogar	&nbsp;<IonIcon icon={gameController} /></IonButton>
+                <IonButton routerLink="/abas/games/quiz" expand="block" color="primary">Jogar	&nbsp;<IonIcon icon={gameController} /></IonButton>
               </IonCardHeader>
             </IonCard>
           </IonCol>
           <IonCol>
             <IonCard>
-              <img src="/assets/games/ra.jpg" />
+              <img alt="Game" src="/assets/games/ra.jpg" />
               <IonCardHeader><IonCardTitle>Realidade Aumentada</IonCardTitle><br />
                 Veja os personagens de seus livros favoritos pela câmera!<br /><br />
-                <IonButton expand="block" color="primary">Jogar	&nbsp;<IonIcon icon={gameController} /></IonButton>
+                <IonButton routerLink="/abas/games/quiz" expand="block" color="primary">Jogar	&nbsp;<IonIcon icon={gameController} /></IonButton>
               </IonCardHeader>
             </IonCard>
           </IonCol>

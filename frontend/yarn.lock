@@ -1628,6 +1628,13 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/pdf-viewer-reactjs@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/pdf-viewer-reactjs/-/pdf-viewer-reactjs-2.0.0.tgz#861256550d51f4fe0131db0d306c6b341f82da90"
+  integrity sha512-VE3G9A3a0oq9QIjRFi84VJ8Z4+MmECYG77x06/6y1XNWIMz+5ct0HuH/FFDI9E2WdtzGZbuatukGZ5ikbAU6mw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/prop-types@*":
   version "15.7.3"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
@@ -7747,6 +7754,19 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+pdf-viewer-reactjs@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/pdf-viewer-reactjs/-/pdf-viewer-reactjs-2.0.7.tgz#af71a662867605089dc9de023cfb07bbf867d1cd"
+  integrity sha512-Lf1iQQ3Tl7Z97Kcm7cvRmTg4ZCOXRsBVOWsIwe6GH+Zr4Ye0ajD2QZgypgiIIiu8RTfGuaPo6dLGxBoTpo+jqA==
+  dependencies:
+    pdfjs-dist "^2.4.456"
+    prop-types "^15.7.2"
+
+pdfjs-dist@^2.4.456:
+  version "2.4.456"
+  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.4.456.tgz#0eaad2906cda866bbb393e79a0e5b4e68bd75520"
+  integrity sha512-yckJEHq3F48hcp6wStEpbN9McOj328Ib09UrBlGAKxvN2k+qYPN5iq6TH6jD1C0pso7zTep+g/CKsYgdrQd5QA==
+
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
@@ -10118,6 +10138,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2@^9.15.2:
+  version "9.15.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.15.2.tgz#d26f1e6dee91d9ff57b3b98b3d92a0d6c3fa6fc1"
+  integrity sha512-evJfoa49s5ZzSmVc62tslNkzlQoCg2GHjB3MQxawfESppvY5AlXKLGQ3nNKxHXKdodKmIHbkl39DgUhcOK7LgQ==
 
 symbol-tree@^3.2.2:
   version "3.2.4"

@@ -55,7 +55,7 @@ const App: React.FC = () => {
     <IonApp>
       <IonReactRouter>
         
-      <Redirect from="/" to="/tutorial" exact /> 
+      {/* <Redirect from="/" to="/abas/games" exact />  */}
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/tutorial" render={() => <Tutorial />} exact />
