@@ -42,7 +42,7 @@
 ## 💻 Projeto
 
   <h1 align="center">
-  <img alt="arvore" title="#delicinha" src=".github/casa-na-arvore-06.svg" width="400"/>
+  <img alt="arvore" title="#delicinha" src=".github/esquilo.jpeg" width="400"/>
  </h1>
 
 Projeto desenvolvido durante a <strong>Mega Hack 3º Edição</strong> promovido pela empresa <strong>Shawee</strong>.
