@@ -101,6 +101,7 @@ $ yarn start or npm run start
 
 # Observações:
 - Não esqueça de mudar a baseURL no arquivo api.ts das pastas web e mobile para o ip da sua máquina
+- Para acessar a demo use o login de demonstração { email: tadeu@gmail.com, senha: 123456 }
 ```
 
 ## 🤔 Como contribuir
