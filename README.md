@@ -46,7 +46,7 @@
  </h1>
 
 Projeto desenvolvido durante a <strong>Mega Hack 3º Edição</strong> promovido pela empresa <strong>Shawee</strong>.
-O <strong>Casa na Árvore</strong> é uma solução criada para o desafio <strong>Árvore</strong>, onde visa amenizar o problema de falta/difícil conectividade e solucionar o problema da falta de interesse pela leitura, trazendo uma dinamica de gamificação para dentro do ambiente de leitura
+O <strong>Casa na Árvore</strong> é uma solução criada para o desafio <strong>Árvore</strong>, onde visa amenizar o problema de falta/difícil conectividade e solucionar o problema da falta de interesse pela leitura, trazendo uma dinamica de gamificação para dentro do ambiente de leitura.
 
 ## 🚀 Tecnologias
 
