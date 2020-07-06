@@ -1,7 +1,6 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonCard, IonList,IonListHeader, IonItem, IonItemDivider, IonIcon, IonRadio, IonRadioGroup, IonLabel, IonMenuButton, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSlides, IonSlide, IonPage, IonTitle, IonToolbar, IonItemOption } from '@ionic/react';
-import React, { useState } from 'react';
-import { walk, wifi, wine, warning } from "ionicons/icons"
-import { useParams, Redirect, useHistory } from 'react-router';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonCard, IonList,IonListHeader, IonItem, IonRadio, IonRadioGroup, IonLabel, IonCardHeader, IonCardSubtitle, IonCardTitle, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React from 'react';
+import { useHistory } from 'react-router';
 import swal from "sweetalert2"
 import './Quiz.css';
 

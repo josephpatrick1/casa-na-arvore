@@ -1,7 +1,6 @@
-import { IonButtons, IonCardContent, IonItem, IonContent, IonIcon, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonLabel, IonButton, IonText } from '@ionic/react';
+import { IonButtons, IonCardContent, IonContent, IonIcon, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton } from '@ionic/react';
 import { cash } from "ionicons/icons"
 import React from 'react';
-import './Notifications.css';
 
 const Notifications: React.FC = () => {
   return (
@@ -33,18 +32,18 @@ const Notifications: React.FC = () => {
           </IonCardHeader>
 
           <IonCardContent id="l">
-          <IonTitle className="tc">Plano de fundo: <small>(10 nozes)</small></IonTitle>
-          <IonButton color="dark">Escuro</IonButton>
-              <IonButton color="secondary">Azul</IonButton> <br/>
-              <IonButton color="tertiary">Azul escuro</IonButton> 
-              <IonButton color="success">Verde</IonButton> <br/>
-              <IonButton color="warning">Amarelo</IonButton> 
-              <IonButton color="danger">Vermelho</IonButton> <br/>
-              <IonButton color="light">Branca</IonButton> 
-              <IonButton color="medium">Cinza</IonButton> <br/>
+            <IonTitle className="tc">Plano de fundo: <small>(10 nozes)</small></IonTitle>
+            <IonButton color="dark">Escuro</IonButton>
+            <IonButton color="secondary">Azul</IonButton> <br />
+            <IonButton color="tertiary">Azul escuro</IonButton>
+            <IonButton color="success">Verde</IonButton> <br />
+            <IonButton color="warning">Amarelo</IonButton>
+            <IonButton color="danger">Vermelho</IonButton> <br />
+            <IonButton color="light">Branca</IonButton>
+            <IonButton color="medium">Cinza</IonButton> <br />
           </IonCardContent>
         </IonCard>
-        </IonContent>
+      </IonContent>
     </IonPage>
   );
 };

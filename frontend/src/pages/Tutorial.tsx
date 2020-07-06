@@ -1,12 +1,10 @@
-import React, { useState, useRef } from 'react';
-import { IonContent, IonPage, IonHeader, IonToolbar, IonButtons, IonButton, IonSlides, IonSlide, IonIcon, useIonViewWillEnter } from '@ionic/react';
+import React, { useRef } from 'react';
+import { IonContent, IonPage, IonButton, IonSlides, IonSlide, IonIcon } from '@ionic/react';
 import { arrowForward } from 'ionicons/icons';
 import './Tutorial.css';
-import { RouteComponentProps } from 'react-router';
 
 
 const Tutorial: React.FC = () => {
-  const [showSkip, setShowSkip] = useState(true);
   const slideRef = useRef<HTMLIonSlidesElement>(null);
 
 
@@ -49,7 +47,7 @@ const Tutorial: React.FC = () => {
           <IonSlide>
             <img src="assets/tutorial/04.png" alt="" className="slide-image" />
             <h2 className="slide-title">Vamos começar?</h2>
-            <IonButton routerLink="/abas"/*onClick={startApp}*/>
+            <IonButton routerLink="/abas">
               Continuar
               <IonIcon slot="end" icon={arrowForward} />
             </IonButton>

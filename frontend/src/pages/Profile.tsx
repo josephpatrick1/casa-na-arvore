@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router';
 
 import './Friend.css';
 
 import { ActionSheetButton } from '@ionic/core';
-import { IonMenuButton, IonSegment, IonSegmentButton, IonCard, IonCardContent, IonItem, IonAvatar, IonRow, IonCol, IonProgressBar, IonActionSheet, IonChip, IonIcon, IonHeader, IonLabel, IonToolbar, IonButtons, IonContent, IonButton, IonBackButton, IonPage, IonLoading } from '@ionic/react'
-import { logoWhatsapp, logoInstagram, personAdd, personAddOutline, book, logoLinkedin  } from 'ionicons/icons';
+import { IonMenuButton, IonCard, IonCardContent, IonItem, IonAvatar, IonRow, IonCol, IonProgressBar, IonActionSheet, IonChip, IonIcon, IonHeader, IonLabel, IonToolbar, IonButtons, IonContent, IonButton, IonPage, IonLoading } from '@ionic/react'
+import { logoWhatsapp, personAdd, personAddOutline, book, logoLinkedin  } from 'ionicons/icons';
 
 import api from "../services/api"
 
@@ -73,25 +72,6 @@ const Friend: React.FC = () => {
     setShowActionSheet(true);
   }
 
-  function openContact(speaker: any) {
-    setActionSheetButtons([
-      {
-        text: `Email ( ${speaker.email} )`,
-        handler: () => {
-          window.open('mailto:' + speaker.email);
-        }
-      },
-      {
-        text: `Call ( ${speaker.phone} )`,
-        handler: () => {
-          window.open('tel:' + speaker.phone);
-        }
-      }
-    ]);
-    setActionSheetHeader(`Share ${speaker.name}`);
-    setShowActionSheet(true);
-  }
-
   function openExternalUrl(url: string) {
     window.open(url, '_blank');
   }
@@ -125,9 +105,6 @@ const Friend: React.FC = () => {
             <IonMenuButton />
           </IonButtons>
             <IonButtons slot="end">
-              {/*<IonButton onClick={() => openContact("telefone")}>
-                <IonIcon slot="icon-only" ios={personAddOutline} md={personAdd}></IonIcon>
-              </IonButton>*/}
               <IonButton onClick={() => openSpeakerShare("Compartilhar")}>
                 <IonIcon slot="icon-only" ios={personAddOutline} md={personAdd}></IonIcon>
               </IonButton>

@@ -16,8 +16,8 @@ import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import Games from '../pages/Games';
 import Notifications from '../pages/Notifications';
-import Tutorial from '../pages/Tutorial';
-import Friend from '../pages/Friend';
+// import Tutorial from '../pages/Tutorial';
+// import Friend from '../pages/Friend';
 import Quiz from "../pages/Quiz"
 // import Leitor from "../pages/Leitor"
 
@@ -34,7 +34,6 @@ return (
         <Route path="/abas/games" render={() => <Games />} exact />
         <Route path="/abas/games/quiz" render={() => <Quiz />} exact />
         <Route path="/abas/notificacoes" render={() => <Notifications />} exact />
-        {/* <Route path="/abas/livro" render={() => <Leitor />} exact /> */}
     </IonRouterOutlet>
     
     <IonTabBar slot="bottom" color="primary">

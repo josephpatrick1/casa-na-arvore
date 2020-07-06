@@ -1,4 +1,4 @@
-import { IonIcon, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonRow, IonCol, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonCardSubtitle } from '@ionic/react';
+import { IonIcon, IonButton, IonCard, IonCardHeader, IonCardTitle, IonRow, IonCol, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import './Games.css';
 import { gameController } from 'ionicons/icons';
